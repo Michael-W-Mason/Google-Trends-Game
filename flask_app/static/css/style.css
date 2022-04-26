@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400;1,500&display=swap');
+
+/* Utility Classes */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Navbar */
+
+/* Choices Section */
+.score{
+    /* flex-direction: row; */
+    margin-bottom: 2%;
+    width: 100%;
+}
+
+.main{
+    font-family: 'Roboto', sans-serif;
+    padding: 5% 10%;
+}
+
+.choice-but{
+    width: inherit;
+}
+
+.btn{
+    padding: 20px;
+    margin: 20px;
+    min-height: 50px;
+    width: 100%;
+}
+
+
+
+form{
+    width: inherit;
+}
+
+.choices{
+    width: inherit;
+}
+
+#label_choice0{
+    background-color: #34A853;
+}
+
+#label_choice1{
+    background-color: #4285F4;
+}
+
+#label_choice2{
+    background-color: #FBBC05;
+}
+
+#label_choice3{
+    background-color: #EA4335;
+}
+
+#submit-btn{
+    width: 50%;
+}
