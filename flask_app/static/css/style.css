@@ -1,63 +1,164 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400;1,500&display=swap');
 
 /* Utility Classes */
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Variables */
+:root {
+    --main-color-1: #4285F4;
+    --main-color-2: #EA4335;
+    --main-color-3: #FBBC05;
+    --main-color-4: #34A853;
+}
+
 /* Navbar */
 
-/* Choices Section */
-.score{
-    /* flex-direction: row; */
+/* Start Game Screen */
+#overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+    width: auto;
+    height: auto;
+    background-color: rgba(211, 211, 211, 0.8);
+    padding: 5% 5%;
+}
+
+.T {
+    color: var(--main-color-1);
+}
+
+.R {
+    color: var(--main-color-2)
+}
+
+.E {
+    color: var(--main-color-3);
+}
+
+.N {
+    color: var(--main-color-1);
+}
+
+.D {
+    color: var(--main-color-4);
+}
+
+.Y {
+    color: var(--main-color-2);
+}
+
+#overlay>h1 {
+    margin-bottom: 3%;
+}
+
+#start-game {
+    width: 40%;
+}
+
+/* Game Section */
+.score {
+    flex-direction: row;
     margin-bottom: 2%;
     width: 100%;
 }
 
-.main{
+.main {
     font-family: 'Roboto', sans-serif;
-    padding: 5% 10%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+    width: auto;
+    height: auto;
+    background-color: rgba(211, 211, 211, 0.8);
+    padding: 1%;
 }
 
-.choice-but{
-    width: inherit;
+.choice-but {
+    width: 100%;
 }
 
-.btn{
+.question-label {
+    width: 40%;
+    height: 100px;
+}
+
+.choice {
     padding: 20px;
     margin: 20px;
     min-height: 50px;
     width: 100%;
 }
 
-
-
-form{
-    width: inherit;
+.choices {
+    width: 100%;
 }
 
-.choices{
-    width: inherit;
+#choice0 {
+    background-color: var(--main-color-1);
 }
 
-#label_choice0{
-    background-color: #34A853;
+#choice1 {
+    background-color: var(--main-color-2);
 }
 
-#label_choice1{
-    background-color: #4285F4;
+#choice2 {
+    background-color: var(--main-color-3);
 }
 
-#label_choice2{
-    background-color: #FBBC05;
+#choice3 {
+    background-color: var(--main-color-4);
 }
 
-#label_choice3{
-    background-color: #EA4335;
-}
-
-#submit-btn{
+#submit-btn {
     width: 50%;
+}
+
+/* LeaderBoard */
+#leaderboard {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -48%);
+    width: auto;
+    height: auto;
+    background-color: rgba(211, 211, 211, 0.8);
+    padding: 2% 2%;
+}
+
+#play-again {
+    min-height: 40px;
+    width: 50%;
+    padding: 5px;
+}
+
+/* Shake Animation */
+@keyframes shake {
+
+    10%,
+    90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+
+    20%,
+    80% {
+        transform: translate3d(2px, 0, 0);
+    }
+
+    30%,
+    50%,
+    70% {
+        transform: translate3d(-4px, 0, 0);
+    }
+
+    40%,
+    60% {
+        transform: translate3d(4px, 0, 0);
+    }
 }

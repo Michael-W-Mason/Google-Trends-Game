@@ -23,11 +23,8 @@ class Question:
         return cls(results[0])
     
     @classmethod
-    def check_answer(cls, data):
+    def get_answer(cls, data):
         query = "SELECT * FROM questions WHERE id=%(id)s"
         results = connectToMySQL(cls.db).query_db(query, data)
         result = cls(results[0])
-        if(result.answer == data["answer"]):
-            return True
-        else:
-            return False
+        return result
