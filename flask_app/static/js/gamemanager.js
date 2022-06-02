@@ -15,7 +15,7 @@ myForm.onsubmit = function(e){
     }
     form.append('name', name);
     form.append('score', score);
-    fetch('http://127.0.0.1:5000/submit_leaderboard', {method : 'POST', body : form})
+    fetch('http://127.0.0.1:5000/trendy/submit_leaderboard', {method : 'POST', body : form})
         .then(response => response.json)
         .then(data => {
             myForm.style.visibility = 'hidden';
@@ -47,7 +47,7 @@ function gameOver(){
 
 function checkAnswer(element){
     answer = element.getAttribute('value');
-    fetch('http://127.0.0.1:5000/get_answer/' + current_question_id)
+    fetch('http://127.0.0.1:5000/trendy/get_answer/' + current_question_id)
     .then(res => res.json())
     .then(data => {
         if (data.answer === answer){
@@ -64,7 +64,7 @@ function checkAnswer(element){
 }
 
 function getQuestion(){
-    fetch('http://127.0.0.1:5000/get_question')
+    fetch('http://127.0.0.1:5000/trendy/get_question')
     .then(res => res.json())
     .then(data => {
         current_question_id = data.id;
@@ -81,7 +81,7 @@ function getQuestion(){
 }
 
 function getLeaderboard(){
-    fetch('http://127.0.0.1:5000/get_leaderboard')
+    fetch('http://127.0.0.1:5000/trendy/get_leaderboard')
     .then(res => res.json())
     .then(data => {
         tableElement = document.getElementById('leaderboard-table');
