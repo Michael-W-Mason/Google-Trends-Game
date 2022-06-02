@@ -20,6 +20,7 @@ class Question:
     def get_row(cls):
         query = "SELECT * FROM questions ORDER BY RAND() LIMIT 1"
         results = connectToMySQL(cls.db).query_db(query)
+        print(results)
         return cls(results[0])
     
     @classmethod

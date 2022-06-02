@@ -3,6 +3,7 @@ from flask import render_template, redirect, request, session, jsonify
 from flask_app.models.question import Question
 from flask_app.models.leaderboard import Leaderboard
 import random as rd
+import sys
 
 @app.route("/")
 def main():
