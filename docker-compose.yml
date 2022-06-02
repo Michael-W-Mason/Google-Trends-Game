@@ -3,7 +3,6 @@ services:
   trends-game:
     image: michaelmason1998/trends_game/server
     container_name: Google-Trends-Game-Server
-    command: python app/server.py
     ports:
       - 5000:5000
     networks:

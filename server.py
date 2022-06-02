@@ -9,4 +9,4 @@ from flask_app.controllers import games
 # Make sure we run this script not as a module
 if __name__ == "__main__":
     # gameloop.start_game()
-    app.run(debug=True, host='0.0.0.0')
+    app.run(debug=True, host='127.0.0.1')

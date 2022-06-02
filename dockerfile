@@ -8,7 +8,6 @@ RUN python3 -m pip install PyMySQL[rsa]
 RUN pip install -r requirements.txt
 RUN pip install flask-cors
 
-COPY . ./app
+COPY . .
 
-
-CMD ["python", "app/server.py"]
+CMD ["gunicorn", "--bind", "0.0.0.0:5000", "wsgi:application"]
