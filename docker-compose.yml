@@ -9,10 +9,11 @@ services:
       - app-network
     depends_on:
       - trends-db
+    restart: unless-stopped
 
   trends-db:
     image: mysql
-    restart: always
+    restart: unless-stopped
     container_name: Google-Trends-Game-MySQL
     environment:
       MYSQL_ROOT_PASSWORD: temp123
