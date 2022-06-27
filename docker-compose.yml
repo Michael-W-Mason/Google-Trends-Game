@@ -1,4 +1,4 @@
-version: "3.7"
+version: "3.3"
 services:
   trends-game:
     image: michaelmason1998/trends_game/server
