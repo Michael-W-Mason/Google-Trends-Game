@@ -1,6 +1,9 @@
 version: "3.3"
 services:
   trends-game:
+    build: 
+      context: ./
+      dockerfile: dockerfile  
     image: michaelmason1998/trends_game/server
     container_name: Google-Trends-Game-Server
     ports:
