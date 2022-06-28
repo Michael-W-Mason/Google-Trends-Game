@@ -47,8 +47,8 @@ def top_charts():
         rand_year = rd.randint(2004, 2021)
         rand_country_index = rd.randint(0, len(gamedata.trends_countries) - 1)
         try:
-            query = pytrends.top_charts(rand_year, hl='en-US', tz=360, geo=gamedata.trends_countries[rand_country_index][0])
-            # query = pytrends.top_charts(rand_year, hl='en-US', tz=360, geo="US")
+            # query = pytrends.top_charts(rand_year, hl='en-US', tz=360, geo=gamedata.trends_countries[rand_country_index][0])
+            query = pytrends.top_charts(rand_year, hl='en-US', tz=360, geo="US")
         except Exception as e:
             print(e)
         if query is None:
@@ -56,8 +56,8 @@ def top_charts():
         if len(query['title']) < 4:
             print("Too Short")
             continue
-        question = f"In the year {rand_year}, which of the following was {gamedata.trends_countries[rand_country_index][1]}'s more popular search?"
-        # question = f"In the year {rand_year}, which of the following was United State's more popular search?"
+        # question = f"In the year {rand_year}, which of the following was {gamedata.trends_countries[rand_country_index][1]}'s more popular search?"
+        question = f"In the year {rand_year}, which of the following was United State's more popular search?"
         data = format_top_charts(query, question)
         Question.insert_question_row(data)
         sleep(1)
