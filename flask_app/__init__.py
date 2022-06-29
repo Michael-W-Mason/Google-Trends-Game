@@ -3,7 +3,7 @@ from flask import Flask
 from flask_cors import CORS
 
 # Creates an instance of our app
-app = Flask(__name__, static_url_path="/trendy")
+app = Flask(__name__, static_url_path="/")
 CORS(app)
 
 # Used for sessions
