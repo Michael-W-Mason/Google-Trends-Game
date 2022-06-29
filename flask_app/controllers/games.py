@@ -6,7 +6,6 @@ import random as rd
 import sys
 
 @app.route("/")
-@app.route("")
 def main():
     if "score" not in session:
         session["score"] = 0
