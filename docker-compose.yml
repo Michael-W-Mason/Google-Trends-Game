@@ -1,4 +1,4 @@
-version: "3.3"
+version: "2.2"
 services:
   trends-game:
     build:
@@ -28,6 +28,14 @@ services:
       - app-network
     cap_add:
       - SYS_NICE
+    deploy:
+      resources:
+        limits:
+          cpus: '0.15'
+          memory: '256M'
+        reservations: 
+          cpus: '0.10'
+          memory: '128M'
 
 networks:
   app-network:
