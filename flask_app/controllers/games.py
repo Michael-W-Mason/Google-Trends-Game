@@ -5,13 +5,13 @@ from flask_app.models.leaderboard import Leaderboard
 import random as rd
 import sys
 
-@app.route("/trendy")
+@app.route("/")
 def main():
     if "score" not in session:
         session["score"] = 0
     return render_template('main.html')
 
-@app.route("/trendy/get_answer/<int:id>")
+@app.route("/get_answer/<int:id>")
 def get_answer(id):
     data = {
         "id" : id
@@ -20,7 +20,7 @@ def get_answer(id):
     answer = question.answer
     return jsonify(answer=answer)
 
-@app.route("/trendy/get_question")
+@app.route("/get_question")
 def get_question():
     ran_question = Question.get_row()
     ran_index = rd.randint(0,3)
@@ -28,12 +28,12 @@ def get_question():
     choices.insert(ran_index, ran_question.answer)
     return jsonify(question = ran_question.question, question_choices = choices, id=ran_question.id)
 
-@app.route("/trendy/get_leaderboard")
+@app.route("/get_leaderboard")
 def get_leaderboard():
     leaderboard = Leaderboard.get_rows()
     return jsonify(leaderboard=leaderboard)
 
-@app.route("/trendy/submit_leaderboard", methods=["POST"])
+@app.route("/submit_leaderboard", methods=["POST"])
 def submit_leaderboard():
     print(request.form)
     data = {
