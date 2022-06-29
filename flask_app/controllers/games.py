@@ -5,7 +5,7 @@ from flask_app.models.leaderboard import Leaderboard
 import random as rd
 import sys
 
-@app.route("/trendy")
+@app.route("/")
 def main():
     if "score" not in session:
         session["score"] = 0
