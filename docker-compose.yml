@@ -1,20 +1,27 @@
 version: "3.3"
 services:
   trends-game:
-    build: 
+    build:
       context: ./
-      dockerfile: dockerfile  
+      dockerfile: dockerfile
     image: michaelmason1998/trends_game/server
+
     container_name: Google-Trends-Game-Server
     ports:
       - 5000:5000
     networks:
       - app-network
-    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          cpus: '0.15'
+          memory: '128M'
+        reservations:
+          cpus: '0.10'
+          memory: '64M'
 
   trends-db:
     image: mysql
-    restart: unless-stopped
     container_name: Google-Trends-Game-MySQL
     environment:
       MYSQL_ROOT_PASSWORD: temp123
@@ -29,6 +36,14 @@ services:
       - app-network
     cap_add:
       - SYS_NICE
+    deploy:
+      resources:
+        limits:
+          cpus: '0.20'
+          memory: '256M'
+        reservations:
+          cpus: '0.10'
+          memory: '64M'
 
 networks:
   app-network:
