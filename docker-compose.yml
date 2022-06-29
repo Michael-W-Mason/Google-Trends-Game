@@ -11,14 +11,6 @@ services:
       - 5000:5000
     networks:
       - app-network
-    deploy:
-      resources:
-        limits:
-          cpus: '0.15'
-          memory: '128M'
-        reservations:
-          cpus: '0.10'
-          memory: '64M'
 
   trends-db:
     image: mysql
@@ -36,14 +28,6 @@ services:
       - app-network
     cap_add:
       - SYS_NICE
-    deploy:
-      resources:
-        limits:
-          cpus: '0.20'
-          memory: '256M'
-        reservations:
-          cpus: '0.10'
-          memory: '64M'
 
 networks:
   app-network:
