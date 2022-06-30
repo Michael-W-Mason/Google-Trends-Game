@@ -9,7 +9,7 @@ class MySQLConnection:
         connection = pymysql.connect(host = 'host.docker.internal',
                                     port=3306,
                                     user = 'root', 
-                                    password = 'temp123', 
+                                    password = 'root', 
                                     db = db,
                                     charset = 'utf8mb4',
                                     cursorclass = pymysql.cursors.DictCursor,
