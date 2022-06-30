@@ -1,4 +1,4 @@
-version: "2.2"
+version: "3.3"
 services:
   trends-game:
     build:
@@ -11,22 +11,22 @@ services:
       - 5000:5000
     networks:
       - app-network
-    trends-db:
-      image: mysql
-      container_name: Google-Trends-Game-MySQL
-      environment:
-        MYSQL_ROOT_PASSWORD: temp123
-        MYSQL_USER: dbuser
-        MYSQL_PASSWORD: userpass
-        MYSQL_DATABASE: google_trends_schema
-      volumes:
-        - ./mysqlserver/mysql_data:/docker-entrypoint-initdb.d
-      ports:
-        - 3306:3306
-      networks:
-        - app-network
-      cap_add:
-        - SYS_NICE
+  trends-db:
+    image: mysql
+    container_name: Google-Trends-Game-MySQL
+    environment:
+      MYSQL_ROOT_PASSWORD: temp123
+      MYSQL_USER: dbuser
+      MYSQL_PASSWORD: userpass
+      MYSQL_DATABASE: google_trends_schema
+    volumes:
+      - ./mysqlserver/mysql_data:/docker-entrypoint-initdb.d
+    ports:
+      - 3306:3306
+    networks:
+      - app-network
+    cap_add:
+      - SYS_NICE
 
 networks:
   app-network:
